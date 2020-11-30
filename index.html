@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 5</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .main-content {
+      display: flex;
+    }
+    #content {
+      width: 70%;
+      float: right;
+    }
+    #mapid {
+      width: 100%;
+    }
+    .side-content {
+      width: 20%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script src="functions.js"></script>
+</head>
+<body>
+  <div class="main-content">
+    <div class="side-content">
+      Elige una ubicacion para ver sus datos astronomicos.
+      <div id="astro-data"></div>
+      Ubicacion:
+      <br>
+      <div id="location"></div>
+      <input type="text" name="locationName" id="locationName" placeholder="Ubicacion">
+      <button onclick="saveLocation()">Guardar ubicacion</button>
+    </div>
+    <div id="content">
+      <div id="mapid"></div>
+    </div>
+  </div>
+  <script>
+    document.onreadystatechange = () => {
+      indexMap();
+    }
+  </script>
+</body>
+</html>
